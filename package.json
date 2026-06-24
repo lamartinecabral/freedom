@@ -1,6 +1,6 @@
 {
   "name": "@lamartinecabral/freedom",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "A really small set of utilities to build web apps.",
   "repository": "github:lamartinecabral/freedom",
   "homepage": "https://www.github.com/lamartinecabral/freedom",

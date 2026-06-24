@@ -259,7 +259,7 @@ var thisModule = Object.freeze({
     getChild: getChild,
     getParent: getParent,
     refElem: refElem,
-    version: "1.0.0-beta.1",
+    version: "1.0.0",
 });
 Object.defineProperty(window, "freedom", {
     value: thisModule,
