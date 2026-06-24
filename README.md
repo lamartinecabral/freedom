@@ -18,7 +18,7 @@ It uses browser native APIs under the hood and get type checking and suggestions
 In a browser:
 
 ```html
-<script src="https://unpkg.com/@lamartinecabral/freedom/dist/index.js"></script>
+<script src="https://unpkg.com/@lamartinecabral/freedom"></script>
 <script>
   const { elem, style } = freedom;
 </script>
@@ -26,7 +26,7 @@ In a browser:
 
 ```html
 <script type="module">
-  import "https://unpkg.com/@lamartinecabral/freedom/dist/index.js";
+  import "https://unpkg.com/@lamartinecabral/freedom";
   const { elem, style } = freedom;
 </script>
 ```
@@ -95,7 +95,7 @@ The code below...
 
 ```html
 <body>
-  <script src="https://unpkg.com/@lamartinecabral/freedom/dist/index.js"></script>
+  <script src="https://unpkg.com/@lamartinecabral/freedom"></script>
   <script>
     const { elem, style, getElem } = freedom;
 
