@@ -50,6 +50,6 @@ declare const thisModule: Readonly<{
     version: string;
 }>;
 declare global {
-    var iuai: typeof thisModule;
+    var freedom: typeof thisModule;
 }
 export {};

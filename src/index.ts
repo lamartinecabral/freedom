@@ -18,7 +18,7 @@ type StyleProps = Partial<PickByType<CSSStyleDeclaration, string>> & {
 
 function setInlineStyle<T extends HTMLElement | CSSStyleRule>(
   element: T,
-  style: StyleProps
+  style: StyleProps,
 ) {
   try {
     for (const prop in style) {
@@ -34,7 +34,7 @@ function setInlineStyle<T extends HTMLElement | CSSStyleRule>(
           element.style.setProperty(
             prop in element.style ? kebab(prop) : prop,
             value,
-            important
+            important,
           );
       } catch (e) {
         console.error(e);
@@ -48,7 +48,7 @@ function setInlineStyle<T extends HTMLElement | CSSStyleRule>(
 function setAttribute<T extends HTMLElement>(
   element: T,
   name: string,
-  value: any
+  value: any,
 ) {
   try {
     if (name === "style") setInlineStyle(element, value);
@@ -82,7 +82,7 @@ function appendChildren(parent: Node, children: any[]) {
         parent.appendChild(
           typeof child === "object"
             ? child
-            : document.createTextNode(String(child))
+            : document.createTextNode(String(child)),
         );
     } catch (err) {
       console.error(err);
@@ -119,19 +119,19 @@ function elemArgs<T extends Tags>(args: any[]) {
 function elem<T extends Tags>(tag: TagLike<T>): Elem<T>;
 function elem<T extends Tags>(
   tag: TagLike<T>,
-  attributes: ElemAttributes<T>
+  attributes: ElemAttributes<T>,
 ): Elem<T>;
 function elem<T extends Tags>(
   tag: TagLike<T>,
   attributes: ElemAttributes<T>,
-  children: ElemChildren
+  children: ElemChildren,
 ): Elem<T>;
 function elem<T extends Tags>(tag: TagLike<T>, children: ElemChildren): Elem<T>;
 function elem<T extends Tags>(tag: TagLike<T>, text: ElemText): Elem<T>;
 function elem<T extends Tags>(
   tag: TagLike<T>,
   attributes: ElemAttributes<T>,
-  text: ElemText
+  text: ElemText,
 ): Elem<T>;
 function elem(...args: any[]) {
   try {
@@ -161,12 +161,12 @@ const getStyleSheet = (() => {
 function initRule<T extends CSSRule = CSSRule>(
   sheet: CSSStyleSheet | CSSMediaRule,
   selector: string | Stringable,
-  content?: string
+  content?: string,
 ) {
   const index = sheet.cssRules.length;
   sheet.insertRule(
     selector + (content ? ` { content: ${content}; }` : " {}"),
-    index
+    index,
   );
   const rule = sheet.cssRules.item(index) as T;
   return rule;
@@ -177,7 +177,7 @@ function style(selector: string | Stringable, properties: StyleProps) {
     const rule = initRule<CSSStyleRule>(
       getStyleSheet(),
       selector,
-      properties.content
+      properties.content,
     );
     setInlineStyle(rule, properties);
     return rule;
@@ -191,7 +191,7 @@ function media(condition: string, styleRules: Record<string, StyleProps>) {
   try {
     const mediaRule = initRule<CSSMediaRule>(
       getStyleSheet(),
-      `@media ${condition}`
+      `@media ${condition}`,
     );
     try {
       for (const selector in styleRules) {
@@ -199,7 +199,7 @@ function media(condition: string, styleRules: Record<string, StyleProps>) {
         const rule = initRule<CSSStyleRule>(
           mediaRule,
           selector,
-          properties.content
+          properties.content,
         );
         setInlineStyle(rule, properties);
       }
@@ -215,7 +215,7 @@ function media(condition: string, styleRules: Record<string, StyleProps>) {
 
 function assertElement<T extends Element>(
   el: T | null | undefined,
-  tag?: string
+  tag?: string,
 ) {
   if (!el) throw new ReferenceError("Element not found.");
   if (tag && el.tagName.toLowerCase() !== tag)
@@ -225,7 +225,7 @@ function assertElement<T extends Element>(
 
 function queryElem<T extends Tags>(
   selector: string,
-  tag?: T
+  tag?: T,
 ): "main" extends T ? HTMLElement : Elem<T> {
   const el = document.querySelector(selector);
   return assertElement(el, tag) as any;
@@ -233,7 +233,7 @@ function queryElem<T extends Tags>(
 
 function getElem<T extends Tags>(
   id: string,
-  tag?: T
+  tag?: T,
 ): "main" extends T ? HTMLElement : Elem<T> {
   const el = document.getElementById(id);
   return assertElement(el, tag) as any;
@@ -241,7 +241,7 @@ function getElem<T extends Tags>(
 
 function getChild<T extends Tags>(
   id: string,
-  tag?: T
+  tag?: T,
 ): "main" extends T ? HTMLElement : Elem<T> {
   const el = document.getElementById(id)?.firstElementChild;
   return assertElement(el, tag) as any;
@@ -249,7 +249,7 @@ function getChild<T extends Tags>(
 
 function getParent<T extends Tags>(
   id: string,
-  tag?: T
+  tag?: T,
 ): "main" extends T ? HTMLElement : Elem<T> {
   const el = document.getElementById(id)?.parentElement;
   return assertElement(el, tag) as any;
@@ -317,10 +317,10 @@ const thisModule = Object.freeze({
 });
 
 declare global {
-  var iuai: typeof thisModule;
+  var freedom: typeof thisModule;
 }
 
-Object.defineProperty(window, "iuai", {
+Object.defineProperty(window, "freedom", {
   value: thisModule,
   enumerable: true,
 });

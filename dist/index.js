@@ -259,9 +259,9 @@ var thisModule = Object.freeze({
     getChild: getChild,
     getParent: getParent,
     refElem: refElem,
-    version: "0.9.5",
+    version: "1.0.0-beta.1",
 });
-Object.defineProperty(window, "iuai", {
+Object.defineProperty(window, "freedom", {
     value: thisModule,
     enumerable: true,
 });

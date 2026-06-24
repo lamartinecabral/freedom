@@ -1,9 +1,9 @@
 {
-  "name": "iuai",
-  "version": "0.9.5",
+  "name": "@lamartinecabral/freedom",
+  "version": "1.0.0-beta.1",
   "description": "A really small set of utilities to build web apps.",
-  "repository": "github:lamartinecabral/iuai",
-  "homepage": "https://www.github.com/lamartinecabral/iuai",
+  "repository": "github:lamartinecabral/freedom",
+  "homepage": "https://www.github.com/lamartinecabral/freedom",
   "keywords": [
     "web",
     "javascript",
@@ -12,13 +12,13 @@
     "library"
   ],
   "author": "lamartinecabral",
-  "license": "ISC",
-  "main": "iuai.js",
+  "license": "MIT",
+  "main": "dist/index.js",
   "files": [
-    "iuai.js",
-    "iuai.d.ts"
+    "dist/index.js",
+    "dist/index.d.ts"
   ],
-  "typings": "iuai.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "start": "tsc",
     "build": "npm install && npm start && node post-build.js",

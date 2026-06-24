@@ -1,4 +1,4 @@
-# iuai
+# @lamartinecabral/freedom
 
 - [What is it?](#what-is-it)
 - [Installation](#installation)
@@ -18,33 +18,33 @@ It uses browser native APIs under the hood and get type checking and suggestions
 In a browser:
 
 ```html
-<script src="https://unpkg.com/iuai/iuai.js"></script>
+<script src="https://unpkg.com/@lamartinecabral/freedom/dist/index.js"></script>
 <script>
-  const { elem, style } = iuai;
+  const { elem, style } = freedom;
 </script>
 ```
 
 ```html
 <script type="module">
-  import "https://unpkg.com/iuai/iuai.js";
-  const { elem, style } = iuai;
+  import "https://unpkg.com/@lamartinecabral/freedom/dist/index.js";
+  const { elem, style } = freedom;
 </script>
 ```
 
 Using npm:
 
 ```sh
-$ npm install iuai
+$ npm install @lamartinecabral/freedom
 ```
 
 ```javascript
-require("iuai");
-const { elem, style } = iuai;
+require("@lamartinecabral/freedom");
+const { elem, style } = freedom;
 ```
 
 ```javascript
-import "iuai";
-const { elem, style } = iuai;
+import "@lamartinecabral/freedom";
+const { elem, style } = freedom;
 ```
 
 # Usage example
@@ -95,9 +95,9 @@ The code below...
 
 ```html
 <body>
-  <script src="https://unpkg.com/iuai/iuai.js"></script>
+  <script src="https://unpkg.com/@lamartinecabral/freedom/dist/index.js"></script>
   <script>
-    const { elem, style, getElem } = iuai;
+    const { elem, style, getElem } = freedom;
 
     style("#app", {
       textAlign: "center",
