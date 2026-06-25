@@ -1,7 +1,7 @@
 {
   "name": "@lamartinecabral/freedom",
   "version": "1.0.0",
-  "description": "A really small set of utilities to build web apps.",
+  "description": "Tiny browser utilities for building DOM and CSS with plain JavaScript.",
   "repository": "github:lamartinecabral/freedom",
   "homepage": "https://www.github.com/lamartinecabral/freedom",
   "keywords": [
