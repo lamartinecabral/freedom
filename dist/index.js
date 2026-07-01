@@ -150,7 +150,7 @@ var getStyleSheet = (function () {
 function initRule(sheet, selector, content) {
     var index = sheet.cssRules.length;
     sheet.insertRule(selector + (content ? " { content: ".concat(content, "; }") : " {}"), index);
-    var rule = sheet.cssRules.item(index);
+    var rule = sheet.cssRules[index];
     return rule;
 }
 function style(selector, properties) {
@@ -259,7 +259,7 @@ var thisModule = Object.freeze({
     getChild: getChild,
     getParent: getParent,
     refElem: refElem,
-    version: "1.0.0",
+    version: "1.0.1",
 });
 Object.defineProperty(window, "freedom", {
     value: thisModule,

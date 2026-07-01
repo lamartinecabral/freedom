@@ -1,6 +1,6 @@
 {
   "name": "@lamartinecabral/freedom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny browser utilities for building DOM and CSS with plain JavaScript.",
   "repository": "github:lamartinecabral/freedom",
   "homepage": "https://www.github.com/lamartinecabral/freedom",

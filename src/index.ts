@@ -168,7 +168,7 @@ function initRule<T extends CSSRule = CSSRule>(
     selector + (content ? ` { content: ${content}; }` : " {}"),
     index,
   );
-  const rule = sheet.cssRules.item(index) as T;
+  const rule = sheet.cssRules[index] as T;
   return rule;
 }
 
